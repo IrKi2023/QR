@@ -1,6 +1,13 @@
-<html>
-<head>
-<a rel="ar" href="https://danaya.shop/vr/used2.usdz">
-    <img src="model-preview.jpg">
-</a>
-
+<body id="body" style="background-color:#000000;margin: 0px;overflow: hidden;">
+    <div id="splash">
+        <div class="loading"></div>
+    </div>
+    <a-scene gltf-model="dracoDecoderPath: https://ar-code.com/threejs3/examples/jsm/libs/draco/gltf/;" embedded tracking-pattern="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; patternRatio: 0.65;" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false" renderer="colorManagement: true; physicallyCorrectLights: false; logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
+        <a-assets>
+            <a-asset-item id="arcode" src="https://danaya.shop/vr/used2.usdz"></a-asset-item>
+        </a-assets>
+        <a-marker preset="custom" type="pattern" url="https://ar-code.com/logo/pattern-webar.patt" smooth="true" smoothCount="2" smoothTolerance="0.01" smoothThreshold="2" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
+            <a-entity id="bowser-model" gltf-model="#arcode" position="0 0 0" scale="4 4 4" class="clickable" animation-mixer gesture-handler></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
